@@ -12,11 +12,12 @@ vetor_de_dados_experimentais <- c(3.37, 4.32, 5.67, 8.31, 9.21, 7.89, 2.13, 4.13
 
 # Calculando estatísticas -------------------------------------------------
 
-media <- mean(vetor_de_dados_experimentais)
+# Round adicionado como exercício de aula
+media <- round( mean(vetor_de_dados_experimentais), 2)
 
-desvio_padrao <- sd(vetor_de_dados_experimentais)
+desvio_padrao <- round (sd(vetor_de_dados_experimentais), 2)
 
-coeficiente_de_variacao <- 100*desvio_padrao/media
+coeficiente_de_variacao <- round (100*desvio_padrao/media, 2)
 
 maximo <- max(vetor_de_dados_experimentais)
 
@@ -29,7 +30,7 @@ mensagem_que_vou_imprimir <- paste0("A média dos dados é ", media, ", já o de
                                     ", enquanto o máximo e o mínimo, por sua vez, são ", minimo, " e ", maximo,
                                     ".")
 
-paste0(mensagem_que_vou_imprimir)
+print(mensagem_que_vou_imprimir)
 # olhe o console para ver esses resultados
 
 # Exercício
