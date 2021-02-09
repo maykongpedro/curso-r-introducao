@@ -40,7 +40,7 @@ library("readr")
 # Porém é necessário carregar as funções, utilizando a função library(), 
 # todas as vezes que você iniciar o seu RStudio.
 
-# Carregando os dados de uma planhila -------
+# Carregando os dados de uma planilha -------
 
 # um formato muito comum de dados que a gente encontra por aí é a planilha. 
 # Para ler uma planilha para dentro do R 
@@ -54,7 +54,7 @@ base_de_dados <- read_csv2("dados/voos_de_janeiro.csv")
 # e guarde em um objeto chamado 'base_de_dados_fev'
 
 
-
+base_de_dados_fev <- read_csv2("dados/voos_de_fevereiro.csv")
 
 
 
@@ -108,14 +108,27 @@ str(base_de_dados)
 
 # a) Quantos voos a base que carregamos referente à fevereiro
 # (base_de_dados_fev) apresenta? (Dica: cada voo é apresentado em uma linha)
-
+nrow(base_de_dados_fev)
 
 # b) Qual é a dimensão do data.frame base_de_dados_fev? E o que significa?
+dim(base_de_dados_fev)
 
+# R: número de linhas e colunas a tabela
 
 # c) Considerando os meses de Janeiro e Fevereiro, em qual mês a distância
 # total voada foi maior?
+dist_janeiro <- sum(base_de_dados$distancia)
 
+dist_fevereiro <- sum(base_de_dados_fev$distancia)
+
+#R: foi maior no mês de janeiro
+# Ou
+
+if (dist_janeiro > dist_fevereiro) {
+    "janeiro"
+} else {
+    "fevereiro"
+}
 
 
 # Datas no R ------------
@@ -275,3 +288,4 @@ var(base_de_dados$distancia)
 
 # Desvio padrão
 sd(base_de_dados$distancia)
+
