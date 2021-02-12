@@ -62,6 +62,7 @@ avaliacao_do_cliente[estado_de_nascimento %in% c("SP", "MT")]
 
 vetor <- c(4, 8, 15, 16, 23, 42)
 
+vetor_maior_que_10 <- vetor[vetor > 10]
 
 
 # Operadores lógicos ----------
@@ -98,6 +99,8 @@ w <- 5
 
 
 # Filtrando linhas do data.frame  com vetores lógicos --------------
+base_de_dados <- read.csv2("dados/voos_de_janeiro.csv")
+
 
 base_de_dados$atraso_chegada
 base_de_dados$atraso_chegada == 4  # Retorna um vetor de VERDADEIRO ou FALSO
@@ -116,21 +119,23 @@ base_de_dados[base_de_dados$origem == "EWR" & base_de_dados$tempo_voo > 100,]
 
 # 1. Usando a base de voos, escreva um código que devolva apenas os voos 
 # que aconteceram no dia 15/01/2013:
+base_de_dados[base_de_dados$mes == 1 & base_de_dados$dia == 15,]
 
 
 # 2. Usando a base de voos, escreva um código que devolva apenas os voos 
 # que NÃO sairam do aeroporto JFK:
+base_de_dados[base_de_dados$origem != "JFK",]
 
 
 # 3. Usando a base de voos, escreva um código que devolva apenas os voos 
 # que sairam do aeroporto JFK, e foram para Atlanta ("ATL"), 
 # e salve em um objeto chamado voos_jfk_atlanta:
-
+voos_jfk_atlanta <- base_de_dados[base_de_dados$origem == "JFK" & base_de_dados$destino == "ATL",]
 
 
 # 4. Usando a base de voos, escreva um código que devolva apenas os voos 
 # que aconteceram nos dias 15/01/2013 ou 16/01/2013:
-
+base_de_dados[base_de_dados$dia == 15 | base_de_dados$dia == 16 & base_de_dados$mes == 1,]
 
 
 # Controle de fluxo -------------------------------------------------------
@@ -201,36 +206,49 @@ if(hoje < carnaval){
 # Usando o if, preencha os campos com ... abaixo para que o if retorne:
 # aprovada se tiver nota maior  ou igual a 5,
 # reprovada se tiver nota menor que 3,
-# e recuperação se tiver nota maior que 3 e menor que 5.
+# e recuperação se tiver nota maior ou igual a 3 e menor que 5.
 
 
-nota <- 5 
+nota <- 5
 
 if(nota >= 5){
   
-  print("....")
+  print("Aprovado")
   
-} else if(....) {
+} else if(nota < 3) {
   
   print("Reprovada")
   
 } else {
   
-  print("...")
+  print("Recuperação")
 }
 
 # 2. Continuando o exercício anterior: 
 # Depois de preencher os campos, teste o código com diferentes notas!
 # O que o código retorna é coerente com a nota que você passou?
+nota <- 7
+nota <- 4
+nota <- 2
 
-
-
+if(nota >= 5){
+  
+  print("Aprovado")
+  
+} else if(nota < 3) {
+  
+  print("Reprovada")
+  
+} else {
+  
+  print("Recuperação")
+}
 
 
 # Voltando a falar sobre tabelas!  ------------------------------------
 
 # Vamos carregar mais uma base! Voos de fevereiro
-
+library(readr)
 base_de_dados_fev <- read_csv2("dados/voos_de_fevereiro.csv")
 
 head(base_de_dados_fev)
