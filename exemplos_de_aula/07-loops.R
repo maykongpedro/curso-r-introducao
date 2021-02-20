@@ -140,9 +140,7 @@ aonde_vou_iterar <- c("c", "a", "d", "b", "e", "f")
 # embaralhamos a ordem das letras
 
 for (variavel in aonde_vou_iterar) {
-  # VARIAVEL, aqui chamamos de i
-  # o 1:10 representa o VETOR_TOTAL
-  
+  # VARIAVEL, aqui chamamos de i# o 1:10 representa o VETOR_TOTAL
   print(variavel)
   # nossa ação. precisa mencionar a letra i
 }
@@ -151,9 +149,15 @@ for (variavel in aonde_vou_iterar) {
 # Exercícios --------------------------------------------------------------
 
 # 1. Crie um script que imprima o texto "Esse aqui é o número XX", onde XX varia de 1 a 50.
+for (numero in 1:50) {
+  resultado <- paste0("Esse aqui é o número ", numero)
+  
+  print(resultado)
+}
+
 
 # 2. Crie um script que calcule o quadrado dos números de 7 a 31, calcule o quadrado desses números e imprima na tela
-# Cada ver que a nossa AÇÃO for executada (calcular o quadrado), escreva seu programa de tal maneira que
+# Cada vez que a nossa AÇÃO for executada (calcular o quadrado), escreva seu programa de tal maneira que
 # o computador indique o que está fazendo, conforme o esquema abaixo:
 
 # "Iniciando ação",
@@ -165,6 +169,21 @@ for (variavel in aonde_vou_iterar) {
 # "Iniciando ação"
 # "Calculando o quadrado de 31"
 # "O quadrado de 31 vale 961"
+
+for (numero in 7:31) {
+  quadrado_de_numero <- numero ^ 2
+  
+  texto_1 <- "Iniciando ação,"
+  texto_2 <- paste0("Calculando o quadrado de ", numero)
+  texto_3 <-
+    paste0("O quadrado de ", numero, " vale ", quadrado_de_numero)
+  
+  print(texto_1)
+  print(texto_2)
+  print(texto_3)
+}
+
+
 
 # Mais utilidades do for
 
@@ -182,7 +201,7 @@ for(arquivo in arquivos_de_dados){
   
   dados <- readr::read_csv2(arquivo)
   
-  maior_atraso <- min(dados$atraso_saida)
+  maior_atraso <- max(dados$atraso_saida, na.rm = TRUE)
   
   texto_de_saida <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
   
@@ -195,41 +214,7 @@ for(arquivo in arquivos_de_dados){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # vamos analisar o que ele já está cuspindo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -260,6 +245,8 @@ for(arquivo in arquivos){
 # Exercícios --------------------------------------------------------------
 
 # 1. Inclua no nosso loop os arquivos que indo até junho
+
+
 
 # 2. Adapte o script anterior para que ele imprima os maiores atrasos e também os voos que saíram mais adiantados.
 
