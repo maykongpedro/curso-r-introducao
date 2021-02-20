@@ -228,7 +228,12 @@ for(arquivo in arquivos_de_dados){
 # 2. o máximo está dando NAs
 
 
-arquivos <- c("dados/voos_de_janeiro.csv", "dados/voos_de_fevereiro.csv", "dados/voos_de_marco.csv")
+arquivos <-
+  c(
+    "dados/voos_de_janeiro.csv",
+    "dados/voos_de_fevereiro.csv",
+    "dados/voos_de_marco.csv"
+  )
 
 for(arquivo in arquivos){
   
@@ -245,9 +250,54 @@ for(arquivo in arquivos){
 # Exercícios --------------------------------------------------------------
 
 # 1. Inclua no nosso loop os arquivos que indo até junho
+arquivos <-
+  c(
+    "dados/voos_de_janeiro.csv",
+    "dados/voos_de_fevereiro.csv",
+    "dados/voos_de_marco.csv",
+    "dados/voos_de_abril.csv",
+    "dados/voos_de_maio.csv",
+    "dados/voos_de_junho.csv"
+  )
+
+# Ou
+
+arquivos_2 <- paste0(
+  "dados/voos_de_",
+  c(
+    "janeiro",
+    "fevereiro",
+    "marco",
+    "abril",
+    "maio",
+    "junho",
+    "julho"
+  ),
+  ".csv"
+)
 
 
 
 # 2. Adapte o script anterior para que ele imprima os maiores atrasos e também os voos que saíram mais adiantados.
+
+for(arquivo in arquivos){
+  
+  dados <- readr::read_csv2(arquivo)
+  
+  maior_atraso <- max(dados$atraso_saida, na.rm = TRUE)
+  
+  texto_de_saida <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
+  
+  print(texto_de_saida)
+  
+  
+  # Voos adiantados
+  maior_adianto <- min(dados$atraso_saida, na.rm = TRUE)
+  
+  texto_de_saida_2 <- paste0("O maior adianto no arquivo ", arquivo, " é ", maior_adianto)
+  
+  print(texto_de_saida_2)
+  
+}
 
 # Dica: Na nossa base de dados um valor negativo na coluna "atraso_saida" indica que o voo saiu adiantado
