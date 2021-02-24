@@ -1,6 +1,6 @@
 # Exercícios - Introdução ao R
 # Aluno: Maykon Gabriel G. Pedro
-# Data: 22 fev.2021
+# Data: 23 fev.2021
 
 # Não entendi direito o que a que nível seria o "interprete" da questão abaixo, mas fiz da maneira que imaginei ser correta.
 

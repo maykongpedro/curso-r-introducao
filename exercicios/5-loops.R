@@ -1,3 +1,9 @@
+# Exercícios - Introdução ao R
+# Aluno: Maykon Gabriel G. Pedro
+# Data: 23 fev.2021
+
+#install.packages('beepr')
+
 # 1. Quando programamos o despertador do nosso
 # celular para acordar de manhã, estamos, 
 # internamente, programando um laço (for) para 
@@ -30,8 +36,9 @@ for (dia in dias_da_semana) {
 
 dias_da_semana <- c("seg", "ter", "qua", "qui", "sex", "sab", "dom")
 
+
 for (dia in dias_da_semana) {
-  if (..........) {
+  if (dia != "sab" & dia != "dom") {
     mensagem <- paste0("8 horas da manhã de ", dia, "! Hora de acordar!")
     print(mensagem)
     beepr::beep(1)
@@ -45,12 +52,11 @@ for (dia in dias_da_semana) {
 # Pode considerar que todo mês tem 30 dias.
 
 
-dias_do_mes <- ..........
+dias_do_mes <- 1:30
 
-for (dia in ..........) {
-  mensagem <- paste0("8 horas da manhã de ", ..........)
+for (dia in dias_do_mes) {
+  mensagem <- paste0("8 horas da manhã do dia ", dia)
   print(mensagem)
   beepr::beep(1)
   Sys.sleep(1)
-}
 }
