@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 slides/
+.Rdata
+.httr-oauth
+.DS_Store

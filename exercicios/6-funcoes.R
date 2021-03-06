@@ -3,10 +3,22 @@
 # 1. Crie uma função que receba um número e retorne o quadrado deste
 # número.
 
+ # function
+quadrado_numero <-
+  function(numero) {
+    numero ^ 2
+  }
+
+ # teste
+quadrado_numero(4)
+
 
 # 2. Crie uma função que receba dois valores (numéricos) e devolva o maior deles. 
 # - A função deve ter exatamente dois argumentos. 
 # - Você pode escolher qualquer nome para a função e para os argumentos.
+
+
+
 
 # [desafio] 3. Crie uma função que recebe 2 números x e y
 # e devolve a raiz quadrada da soma desses números.
