@@ -24,13 +24,37 @@ quadrado_numero(4)
 # - A função deve ter exatamente dois argumentos. 
 # - Você pode escolher qualquer nome para a função e para os argumentos.
 
+# function
+maior_valor <-
+  function(numero_1, numero_2) {
+    if (numero_1 > numero_2) {
+      numero_1
+    }
+    else {
+      numero_2
+    }
+  }
 
+# teste
+maior_valor(50, 10)
 
 
 # [desafio] 3. Crie uma função que recebe 2 números x e y
 # e devolve a raiz quadrada da soma desses números.
 # Depois teste a função para valores (x=2, y=3).
 # Dica: sqrt() é a função para raiz quadrada.
+
+# function
+raiz_quadradada_da_soma <- 
+  function(x, y) {
+    
+    soma <- x + y
+    sqrt(soma)
+    
+  }
+
+# testando a função
+raiz_quadradada_da_soma(2, 3)
 
 
 # Funções e controle de fluxo ----------------------------
