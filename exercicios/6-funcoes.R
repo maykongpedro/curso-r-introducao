@@ -1,3 +1,10 @@
+# Exercícios - Introdução ao R
+# Aluno: Maykon Gabriel G. Pedro
+# Data: 05 mar.2021 
+
+######### Atividade enviada com atraso #######
+
+
 # Funções proprias ---------------------------------------------------------
 
 # 1. Crie uma função que receba um número e retorne o quadrado deste
